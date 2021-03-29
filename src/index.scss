@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+$green: #76b300;
+$white: #fff;
+$gray: #ababab;
+$black: #141414;
+
+.green {
+  color: $green;
+}
+
+* {
+  outline: none !important;
+}
+
+*::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #666666;
+  border-radius: 10px;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  background-color: $black;
+  font-family: 'Roboto', sans-serif;
+}
+
+// Search Component
+
+.search-wrapper {
+  position: relative;
+  z-index: 99;
+
+  ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: $black;
+    max-height: 300px;
+    // height: 300px;
+    overflow: auto;
+    margin: 0;
+
+    li {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-bottom: 3px solid $green;
+    color: $white;
+
+    &::placeholder {
+      color: $white;
+    }
+
+    &:focus {
+      background: transparent;
+      color: $white;
+      box-shadow: none;
+      border-color: $green;
+    }
+  }
+}
+
+.card {
+  background: $black;
+}
+
+// Home Page
+
+.moviecard-wrapper {
+  .mcw-common {
+    flex: 1;
+    color: $white;
+
+    &.mcw-title {
+      flex: 5;
+    }
+  }
+
+}
+
+// Detail Page 
+
+.detail-page {
+
+  &:before {
+    content: "";
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: transparentize($black, .8);
+  }
+
+  .detail-bgimg {
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .detail-wrapper {
+    background: $black;
+    box-shadow: 0 0 1px 0px $black;
+  }
+
+  .movie-gen li {
+    display: inline-block;
+    font-size: 25px;
+    color: $green;
+    margin-right: 5px;
+
+    &:last-child span {
+      display: none;
+    }
+  }
+}
+
+// POPUP
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black;
+  z-index: 999;
+
+  .form-wrapper {
+    width: 600px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+
+    input,
+    textarea {
+      background: transparent;
+      color: $white;
+      border: none;
+      border-bottom: 1px solid $green;
+      width: 100%;
+      padding: .2rem;
+    }
+  }
+}
+
+@import './responsive.scss';
