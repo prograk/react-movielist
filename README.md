@@ -4,6 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+To Run Project you need following commands
+
+### `json-server -w db.json --port 8000`
+### `yarn start`
+
 In the project directory, you can run:
 
 ### `yarn start`
